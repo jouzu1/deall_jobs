@@ -20,4 +20,4 @@ mongoose
 //Router
 app.use(express.json());
 app.use("/user",userRoute);
-app.use("/register",authRoute);
+app.use("",authRoute);

@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require("../models/user");
 
 //Register
-router.post("/user",async (req,res)=>{
+router.post("/register",async (req,res)=>{
     const newUser = new User(req.body);
     try {
         if(req.body.isAdmin){
