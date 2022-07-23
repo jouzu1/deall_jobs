@@ -30,6 +30,8 @@ router.post('/login', async (req, res) => {
         if(findUser.password != req.body.password){
             res.status(401).send({message : "Unauthorized"})
         }else{
+            const {password, ...User} = findUser._doc;
+            res.status(200).send(User);
         }
     } catch (error) {
 
