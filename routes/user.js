@@ -32,11 +32,22 @@ router.post("/get/user", verifyToken, async (req, res) => {
     }
 })
 
-//Only Admin can access update permissions
+//Only Admin can access update action
 router.put("/update/:username", verifyAdmin, async (req, res) => {
     try {
         let updateUser = await User.findOneAndUpdate(req.params.username, req.body, {new:true});
         res.status(201).send(updateUser);
+    } catch (error) {
+        res.status(500).send({message : error});
+        console.log(error);
+    }
+})
+
+//Only Admin can access delete action
+router.delete("/delete", verifyAdmin, async (req,res) => {
+    try {
+        await User.deleteOne({username : req.body.username});
+        res.status(200).send({message : "Delete successfully"});
     } catch (error) {
         res.status(500).send({message : error});
         console.log(error);
