@@ -54,4 +54,17 @@ router.delete("/delete", verifyAdmin, async (req,res) => {
     }
 })
 
+
+//Only Admin can access create action
+router.post("/create", verifyAdmin, async (req, res) => {
+    try {
+        const initUser = new User(req.body);
+        const createUser = await initUser.save();
+        res.status(201).send({message : "New user created successfully", data : createUser})
+    } catch (error) {
+        res.status(500).send({message : error});
+        console.log(error);
+    }
+})
+
 module.exports = router;
