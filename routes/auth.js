@@ -14,6 +14,7 @@ router.post("/register",async (req,res)=>{
             res.status(201).send({message : "New User is created successfully", data : await newUser.save()});
     } catch (error) {
         res.status(409).send({message : error});
+        console.log(error);
     }
 })
 
@@ -43,6 +44,7 @@ router.post('/login', async (req, res) => {
         }
     } catch (error) {
         res.status(500).send({message : error});
+        console.log(error);
     }
 })
 
