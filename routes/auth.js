@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/user");
+const jwt = require("jsonwebtoken");
 
 //Register
 router.post("/register",async (req,res)=>{
@@ -31,10 +32,17 @@ router.post('/login', async (req, res) => {
             res.status(401).send({message : "Unauthorized"})
         }else{
             const {password, ...User} = findUser._doc;
-            res.status(200).send(User);
+            const userInfo = findUser._doc;
+
+            const token = jwt.sign({
+                id: userInfo.id,
+                isAdmin: userInfo.isAdmin
+            },process.env.JWT,{expiresIn:"10m"})
+
+            res.status(200).send({User,token});
         }
     } catch (error) {
-
+        res.status(500).send({message : error});
     }
 })
 
