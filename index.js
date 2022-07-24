@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+var cors = require('cors');
 
 const userRoute = require("./routes/user.js");
 const authRoute = require("./routes/auth");
 
 dotenv.config();
+app.use(cors());
 
 app.listen(5000,() => {
     console.log('Server running on port', 5000);
