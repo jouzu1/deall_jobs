@@ -26,4 +26,4 @@ Steps and Proofs of Deploy to Kubernetes
 - [Step 1](https://ibb.co/Q6c8zCZ)
 - [Step 2](https://ibb.co/k9Cz3Zj)
 - [Step 3](https://ibb.co/YtWYFPB)
-- [Step 4](https://ibb.co/wLSC8B1)
+- [Step 4](https://ibb.co/wLSC8B1) (*To deploy yml to Kubernetes)
