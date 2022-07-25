@@ -19,3 +19,4 @@ Flowchart
 Docker
 ---
 - run the services by enter the docker command (docker run -p 5000:5000 <image id>), then test the service in postman
+- to run services in docker compose environment, please enter comman "docker-compose up --build", then hit the endpoint service in postman/any api testing tools
