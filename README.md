@@ -20,3 +20,10 @@ Docker
 ---
 - run the services by enter the docker command (docker run -p 5000:5000 <image id>), then test the service in postman
 - to run services in docker compose environment, please enter comman "docker-compose up --build", then hit the endpoint service in postman/any api testing tools
+
+Steps and Proofs of Deploy to Kubernetes
+---
+- [Step 1](https://ibb.co/Q6c8zCZ)
+- [Step 2](https://ibb.co/k9Cz3Zj)
+- [Step 3](https://ibb.co/YtWYFPB)
+- [Step 4](https://ibb.co/wLSC8B1)
