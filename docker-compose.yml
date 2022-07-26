@@ -8,7 +8,8 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=admin
     volumes:
       - my_data:/data/db
-  node-web:
+  dealljobs:
+    image: 'jouzu/dealljobs'
     build:
       context: .
       dockerfile: Dockerfile
